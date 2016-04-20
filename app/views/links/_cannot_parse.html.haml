@@ -1,0 +1,16 @@
+- unless @url.empty?
+  .caption_wrapper
+    %span.caption.inverted
+      =t 'index.details.cannot_parse.caption'
+    .clear
+
+  .inverted
+    .cannot_parse#direct
+      =t 'index.details.cannot_parse.text'
+      %br
+      %br
+      =t 'index.details.cannot_parse.private_text'
+      %br
+      %br
+      =t 'index.details.cannot_parse.email_us'
+      = mail_to "badurl@tubity.com", "badurl@tubity.com", {class: "black_link"}

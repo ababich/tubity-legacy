@@ -1,0 +1,6 @@
+developer_tag: Tubity
+auth_sub:
+  secure: 0
+  session: 1
+  developer_key:
+  client_key:

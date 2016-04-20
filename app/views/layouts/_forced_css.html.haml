@@ -1,0 +1,20 @@
+:css
+  body {
+    background-color: #{@background_color};
+  }
+
+  .inverted {
+    color: #{@background_color};
+  }
+
+  #thumbs tr.selected .for_arrow .arrow.left {
+    border-color: transparent transparent transparent #{@background_color};
+  }
+
+  #thumbs tr.selected .for_arrow .arrow.right {
+    border-color: transparent #{@background_color} transparent transparent;
+  }
+
+  .clickable:hover {
+    border-bottom: 1px dotted #{@background_color};
+  }

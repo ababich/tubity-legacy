@@ -1,0 +1,29 @@
+
+en:
+  layout:
+    top_description: 'Сute video links for YouTube, Dailymotion and Vimeo'
+
+    links:
+      news: 'news'
+
+  index:
+    video_link:
+      caption: 'Paste your movie url:'
+      button: 'create links'
+
+    details:
+      url:
+        image_caption: 'Choose a thumb from the movie:'
+      cannot_parse:
+        caption: 'Cannot parse provided url'
+        text: 'Please, check your url. If it is YouTube video url, you can just provide 11-char video id as url above.'
+        private_text: 'Also, pay your attention that we are unable to reach private or protected videos.'
+        email_us: 'Please, send us an example of failed url to'
+
+    links:
+      caption: 'Choose your code to share:'
+      hint:
+        will: 'Caption will be added right after the thumb:'
+        may: 'Caption may be added right after the thumb:'
+        disable: 'disable'
+        enable: 'enable'

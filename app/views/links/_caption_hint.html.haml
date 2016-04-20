@@ -1,0 +1,9 @@
+- caption, action = (session[:no_caption]) ? [:may, :enable] : [:will, :disable]
+
+#no_caption.hidden= session[:no_caption] == true
+
+%sup *
+=t "index.links.hint.#{caption}"
+[
+%span.clickable.bold_font{onclick: "Tubity.call('#{caption_switch_path}');"}=t "index.links.hint.#{action}"
+]

@@ -1,0 +1,37 @@
+!!!
+%html{lang: I18n.locale.to_s}
+  %head
+    %title Tubity
+
+    %meta{charset: 'utf-8'}
+    %meta{content: 'yes', name: 'apple-mobile-web-app-capable'}
+    %meta{content: 'minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no', name: 'viewport'}
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+    = render partial: "layouts/forced_css"
+
+  %body
+    .body_wrapper
+      .title.titled
+        .links.top_badge
+          = link_to 'api', api_path
+          |
+          = link_to t('layout.links.news'), "http://twitter.com/tubity_com", target: "_blank"
+
+        =lang_badge :en
+        =lang_badge :ru
+
+        TUBITY
+
+      .top_description
+        =t 'layout.top_description'
+
+
+      = yield
+
+      =render partial: 'root/openstat'
+      =render partial: 'root/google_analytics'
+      =render partial: 'root/copyright'

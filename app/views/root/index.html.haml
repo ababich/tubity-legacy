@@ -1,0 +1,19 @@
+.video_link
+  .caption_wrapper
+    %span.caption.inverted
+      =t 'index.video_link.caption'
+    .clear
+
+  .input_field.inverted
+    =form_tag "/u", :method => :post, :remote => true, :id => "video_link_form" do |f|
+      %textarea#video_link{ name: "video_link", rows: 3, autofocus: true }
+
+.spacer
+
+.details
+  #url_wrapper
+
+  #images_wrapper
+
+  #links_wrapper
+

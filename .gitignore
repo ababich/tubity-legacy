@@ -1,0 +1,13 @@
+/.idea
+config/database.yml
+coverage/
+log/*.log
+vendor/*
+tmp/*
+public/assets/*
+.bundle
+.tags*
+tags
+.DS_Store
+bin/*
+.svn

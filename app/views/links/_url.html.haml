@@ -1,0 +1,67 @@
+.caption_wrapper
+  %span.caption.inverted
+    =t 'index.details.url.image_caption'
+  .clear
+
+.image_wrapper.inverted
+
+  %table#thumbs
+    - thumbs = @link.thumbs.select{|t| t.width.to_i <= 200}.uniq_by(&:duration)
+    - thumbs.each do |thumb|
+      %tr.thumb
+
+        %td.for_arrow
+          .arrow.left
+
+        %td
+          = image_tag "#{root_url}#{thumb.hash}"#, width: "#{thumb.width}px", height: "#{thumb.height}px"
+
+        %td.for_arrow
+          .arrow.right
+
+.spacer
+
+.caption_wrapper
+  %span.caption.inverted
+    =t 'index.links.caption'
+    %sup *
+  .clear
+
+.input_field.inverted
+  %table#links
+
+    %tr
+      %td.label Forum
+      %td.input
+        %input#link_forum{ name: "link_forum", type: "text" }
+
+    %tr
+      %td.label HTML
+      %td.input
+        %input#link_html{ name: "link_html", type: "text" }
+
+    %tr
+      %td.label Twitter
+      %td.input
+        %input#link_twitter{ name: "link_twitter", type: "text" }
+
+    %tr
+      %td.label Direct
+      %td.input
+        %input#link_direct{ name: "link_direct", type: "text", value: "#{full_url @link.hash}" }
+
+    %tr.small_font.link_caption
+      %td{colspan: 2}
+        %table
+          %tr
+            %td#caption_hint{colspan: 2}
+              = render partial: "caption_hint"
+          %tr
+            %td#service_icon_preview
+              = image_tag service_icon(@link.service)
+              #service_icon.hidden
+                = service_icon @link.service
+
+            - title = "#{@link.title} [#{@link.readable_duration}]"
+            %td#movie_text.text{title: h(title)}
+              = title

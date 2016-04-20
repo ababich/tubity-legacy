@@ -1,0 +1,11 @@
+- lang ||= :en
+- klass = lang.to_s
+
+- if I18n.locale == lang
+  - klass << " inverted"
+  - text = lang
+- else
+  - text = link_to(lang, lang_url(lang))
+
+.lang.top_badge{class: klass}
+  = text
